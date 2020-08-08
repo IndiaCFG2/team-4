@@ -1,0 +1,43 @@
+ul {
+	margin-top: 50px;
+	list-style-type: none;
+}
+
+li {
+	float: left;
+}
+
+ul li {
+	text-decoration: none;
+	line-height: 2.3em;
+}
+
+ul li.size1 {
+	color: #666;
+	padding: 2px;
+}
+
+ul li.size2 {
+	color: #912600;
+	padding: 12px;
+}
+ul li.size3 {
+	color: #877900;
+	padding: 18px;
+}
+	
+ul li.size4 {
+	color: #1d6c01;
+	padding: 8px;
+}
+	
+ul li.size5 {
+	color: #004e6b;
+	padding: 6px;
+}
+
+	
+ul li.size6 {
+	color: #430069;
+	padding: 24px;
+}
