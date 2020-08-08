@@ -6,18 +6,18 @@ const app = express();
 
 app.use(bodyParser.json());
 
-const db = require('./config/mongoDBKey').mongoURI;
+//const db = require('./config/mongoDBKey').mongoURI;
 
-mongoose
+/* mongoose
     .connect(db)
     .then( () => console.log('MongoDB Connection Established.') )
-    .catch( err => console.log(err));
+    .catch( err => console.log(err)); */
 
 app.get('/', (req, res) => {
     res.json({status: 'Available'}) 
 });
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Server runnng on port ${port}`)
 }); 

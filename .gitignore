@@ -4,6 +4,5 @@ Team*.zip
 *.crt
 *.key
 *.ovpn
-__MACOSX
-Team 4
-node_modules
+node_modules/
+config/default.json
