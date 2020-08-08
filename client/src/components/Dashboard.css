@@ -1,0 +1,14 @@
+h1 {
+    color:rgb(63, 81, 181);
+    font-weight: bold;
+  }
+  .buttons-right>button {
+    float: right;
+    margin: 5px;
+  }
+  .app-container {
+    padding: 25px;
+  }
+  .container .row div {
+    outline: solid 1px black;
+  }
