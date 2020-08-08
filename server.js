@@ -1,10 +1,13 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+const dashboardRouter = require("./back_end/routes/dashboard");
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use('/dashboard', dashboardRouter);  
 
 //const db = require('./config/mongoDBKey').mongoURI;
 
