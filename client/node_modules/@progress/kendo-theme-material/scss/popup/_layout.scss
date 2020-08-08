@@ -1,0 +1,51 @@
+@import "../../modules/@progress/kendo-theme-default/scss/popup/_layout.scss";
+
+@include exports("popup/layout/material") {
+
+    .k-popup {
+        .k-group-header {
+            text-transform: uppercase;
+        }
+
+        &.k-colorpicker-popup {
+            padding: 0;
+        }
+
+        .k-outer-group-header {
+            line-height: $line-height-lg;
+        }
+    }
+
+    .k-list-container {
+
+        .k-button {
+            box-shadow: none;
+
+            &::before {
+                display: none;
+            }
+        }
+
+    }
+
+    .k-list-filter {
+        height: auto;
+
+        & > .k-textbox {
+            border-width: 0 0 2px;
+            @include border-radius( $border-radius-lg );
+        }
+
+        & > .k-icon {
+            margin-top: -.5em;
+            transform: none;
+        }
+    }
+
+    // Tooltip popup container padding
+    .k-animation-container-shown.k-tooltip-wrapper {
+        .k-popup-transparent {
+            padding: 0;
+        }
+    }
+}

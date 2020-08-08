@@ -2,10 +2,12 @@ import React from "react";
 import {Navbar, Nav} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route } from "react-router-dom";
-import PolicyList from './components/PolicyList';
+import PolicyList from './components/Policylist';
 import Policy from './components/Policy';
 import './App.css';
 import Switch from "react-bootstrap/esm/Switch";
+import Dashboard from "./components/Dashboard";
+
 function App() {
 return (
 <BrowserRouter>
@@ -21,7 +23,9 @@ return (
     <div className="main">
      <Switch>
         <Route path="/" exact={true} component={PolicyList} />
-        <Route path="/policy" exact={true} component={Policy} />
+        <Route path="/policy"  component={Policy} />
+        <Route path="/dashboard"  component={Dashboard} />
+
        </Switch>
     </div>
 </BrowserRouter>);

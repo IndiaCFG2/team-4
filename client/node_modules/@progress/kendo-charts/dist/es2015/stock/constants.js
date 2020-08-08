@@ -1,0 +1,4 @@
+const NAVIGATOR_PANE = "_navigator";
+const NAVIGATOR_AXIS = NAVIGATOR_PANE;
+
+export { NAVIGATOR_AXIS, NAVIGATOR_PANE };

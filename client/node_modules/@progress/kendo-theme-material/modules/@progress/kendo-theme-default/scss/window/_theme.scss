@@ -1,0 +1,31 @@
+@include exports("window/theme") {
+
+    // Window
+    .k-window {
+        @extend .k-text-selection !optional;
+        @include fill(
+            $window-text,
+            $window-bg,
+            $window-border
+        );
+        @include box-shadow( $window-shadow );
+    }
+
+    .k-window {
+        &:focus,
+        &.k-state-focused {
+            @include box-shadow( $window-focused-shadow );
+        }
+    }
+
+
+    // Titlebar
+    .k-window-titlebar {
+        @include fill(
+            $window-titlebar-text,
+            $window-titlebar-bg,
+            $window-titlebar-border
+        );
+    }
+
+}

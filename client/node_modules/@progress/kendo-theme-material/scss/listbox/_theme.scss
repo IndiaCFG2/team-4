@@ -1,0 +1,7 @@
+@import "../../modules/@progress/kendo-theme-default/scss/listbox/_theme.scss";
+
+@include exports( "listbox/theme/material") {
+    .k-item.k-drag-clue {
+        box-shadow: $popup-shadow;
+    }
+}

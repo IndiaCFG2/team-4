@@ -1,0 +1,83 @@
+@include exports("checkbox/theme") {
+
+    // Checkbox
+    .k-checkbox {
+        @include fill(
+            $checkbox-text,
+            $checkbox-bg,
+            $checkbox-border
+        );
+    }
+
+
+    // Hover state
+    .k-checkbox:hover {
+        @include fill(
+            $checkbox-hovered-text,
+            $checkbox-hovered-bg,
+            $checkbox-hovered-border
+        );
+    }
+
+
+    // Focus state
+    .k-checkbox:focus {
+        @include fill( $border: $checkbox-focused-border );
+        @include box-shadow( $checkbox-focused-shadow );
+    }
+
+
+    // Indeterminate
+    .k-checkbox:indeterminate,
+    .k-checkbox.k-state-indeterminate {
+        @include fill(
+            $checkbox-indeterminate-text,
+            $checkbox-indeterminate-bg,
+            $checkbox-indeterminate-border
+        );
+    }
+
+
+    // Checked
+    .k-checkbox:checked {
+        @include fill(
+            $checkbox-checked-text,
+            $checkbox-checked-bg,
+            $checkbox-checked-border
+        );
+    }
+    .k-checkbox:checked:focus {
+        @include fill( $border: $checkbox-focused-checked-border );
+        @include box-shadow( $checkbox-focused-checked-shadow );
+    }
+
+
+    // Disabled
+    .k-checkbox:disabled {
+        @include fill(
+            $checkbox-disabled-text,
+            $checkbox-disabled-bg,
+            $checkbox-disabled-border
+        );
+    }
+    .k-checkbox:checked:disabled,
+    .k-checkbox:indeterminate:disabled,
+    .k-checkbox.k-state-indeterminate:disabled {
+        @include fill(
+            $checkbox-disabled-checked-text,
+            $checkbox-disabled-checked-bg,
+            $checkbox-disabled-checked-border
+        );
+    }
+
+
+    // Invalid
+    .k-checkbox.k-invalid,
+    .k-checkbox.k-state-invalid {
+        @include fill( $border: $checkbox-invalid-border );
+    }
+    .k-checkbox.k-invalid + .k-checkbox-label,
+    .k-checkbox.k-state-invalid + .k-checkbox-label {
+        @include fill( $color: $checkbox-invalid-text );
+    }
+}

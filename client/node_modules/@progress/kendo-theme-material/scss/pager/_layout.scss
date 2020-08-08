@@ -1,0 +1,19 @@
+@import "../../modules/@progress/kendo-theme-default/scss/pager/_layout.scss";
+
+@include exports( "pager/layout/material" ) {
+
+    // Responsive
+    .k-pager-md,
+    .k-pager-sm {
+
+        .k-pager-numbers {
+
+            .k-current-page .k-link {
+                border-width: 0 0 1px;
+            }
+
+        }
+
+    }
+
+}

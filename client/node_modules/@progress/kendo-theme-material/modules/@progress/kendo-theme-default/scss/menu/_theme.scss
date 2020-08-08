@@ -1,0 +1,111 @@
+@include exports("menu/theme") {
+
+    .k-menu:not(.k-context-menu) {
+        @include fill(
+            $menu-text,
+            $menu-bg,
+            $menu-border,
+            $menu-gradient
+        );
+
+        > .k-item {
+            @include fill(
+                $menu-item-text,
+                $menu-item-bg,
+                $menu-item-border,
+                $menu-item-gradient
+            );
+
+            &:hover,
+            &.k-state-hover {
+                @include fill(
+                    $menu-item-hover-text,
+                    $menu-item-hover-bg,
+                    $menu-item-hover-border,
+                    $menu-item-hover-gradient
+                );
+            }
+
+            > .k-state-active {
+                @include fill(
+                    $menu-item-expanded-text,
+                    $menu-item-expanded-bg,
+                    $menu-item-expanded-border,
+                    $menu-item-expanded-gradient
+                );
+            }
+
+            &:focus,
+            &.k-state-focused {
+                @include box-shadow( $menu-item-focus-shadow );
+            }
+        }
+    }
+
+    .k-menu-group,
+    .k-menu.k-context-menu {
+        @include fill(
+            $menu-popup-text,
+            $menu-popup-bg,
+            $menu-popup-border,
+            $menu-popup-gradient
+        );
+
+        .k-item {
+            @include fill(
+                $menu-popup-item-text,
+                $menu-popup-item-bg,
+                $menu-popup-item-border,
+                $menu-popup-item-gradient
+            );
+
+            &:hover,
+            &.k-state-hover {
+                @include fill(
+                    $menu-popup-item-hover-text,
+                    $menu-popup-item-hover-bg,
+                    $menu-popup-item-hover-border,
+                    $menu-popup-item-hover-gradient
+                );
+            }
+
+            > .k-state-active {
+                @include fill(
+                    $menu-popup-item-expanded-text,
+                    $menu-popup-item-expanded-bg,
+                    $menu-popup-item-expanded-border,
+                    $menu-popup-item-expanded-gradient
+                );
+            }
+
+            &:focus,
+            &.k-state-focused {
+                @include box-shadow( $menu-popup-item-focus-shadow );
+            }
+        }
+    }
+
+
+    // Scrolling
+    .k-menu-scroll-button {
+        @include fill(
+            $menu-scroll-button-text,
+            $menu-scroll-button-bg,
+            $menu-scroll-button-border,
+            $menu-scroll-button-gradient
+        );
+
+        &:hover {
+            @include fill(
+                $menu-scroll-button-hover-text,
+                $menu-scroll-button-hover-bg,
+                $menu-scroll-button-hover-border,
+                $menu-scroll-button-hover-gradient
+            );
+
+            &::before {
+                opacity: 0;
+            }
+        }
+    }
+}

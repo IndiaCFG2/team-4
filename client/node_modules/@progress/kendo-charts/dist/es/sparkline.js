@@ -1,0 +1,1 @@
+export { default as Sparkline } from './sparkline/sparkline';

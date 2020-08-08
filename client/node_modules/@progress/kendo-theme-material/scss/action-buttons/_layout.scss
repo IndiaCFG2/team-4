@@ -1,0 +1,13 @@
+@import "../../modules/@progress/kendo-theme-default/scss/action-buttons/_layout.scss";
+
+@include exports("action-buttons/layout/material") {
+
+    .k-actions,
+    .k-action-buttons,
+    .k-columnmenu-actions {
+        .k-button {
+            @include box-shadow( none );
+        }
+    }
+
+}

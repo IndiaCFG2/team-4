@@ -1,0 +1,10 @@
+@import "../../modules/@progress/kendo-theme-default/scss/radio/_layout.scss";
+
+@include exports( "radio/layout/material" ) {
+
+    .k-radio::before {
+        transition: transform linear 280ms;
+        transform-origin: 0 0;
+    }
+
+}

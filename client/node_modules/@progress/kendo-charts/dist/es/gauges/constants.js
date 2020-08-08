@@ -1,0 +1,20 @@
+var ANGULAR_SPEED = 150;
+var LINEAR_SPEED = 250;
+var ARROW = "arrow";
+var ARROW_POINTER = "arrowPointer";
+var BAR_POINTER = "barPointer";
+var DEFAULT_HEIGHT = 200;
+var DEFAULT_LINE_WIDTH = 0.5;
+var DEFAULT_WIDTH = 200;
+var DEGREE = Math.PI / 180;
+var INSIDE = "inside";
+var LINEAR = "linear";
+var OUTSIDE = "outside";
+var RADIAL_POINTER = "radialPointer";
+var RADIAL_RANGE_POINTER = "radialRangePointer";
+
+export {
+    ANGULAR_SPEED, LINEAR_SPEED, ARROW, ARROW_POINTER, BAR_POINTER,
+    DEFAULT_HEIGHT, DEFAULT_LINE_WIDTH, DEFAULT_WIDTH,
+    DEGREE, INSIDE, LINEAR, OUTSIDE, RADIAL_POINTER, RADIAL_RANGE_POINTER
+};

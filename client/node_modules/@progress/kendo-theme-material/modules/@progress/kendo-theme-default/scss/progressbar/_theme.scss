@@ -1,0 +1,28 @@
+@include exports("progressbar/theme") {
+
+    @keyframes progressbar-indeterminate-animation {
+        from { background-position: 0 0; }
+        to { background-position: $progressbar-height 0; }
+    }
+
+    .k-progressbar {
+        @extend .k-text-selection !optional;
+        @include fill( $progressbar-text, $progressbar-bg, $progressbar-border, $progressbar-gradient );
+
+        .k-state-selected {
+            @include fill( $progressbar-fill-text, $progressbar-fill-bg, $progressbar-fill-border, $progressbar-fill-gradient );
+        }
+
+        .k-item {
+            border-color: $progressbar-chunk-border;
+        }
+    }
+
+    .k-progressbar-indeterminate {
+        @include fill( $progressbar-indeterminate-text, $progressbar-indeterminate-bg, $progressbar-indeterminate-border );
+        @include striped-gradient( shade($progressbar-indeterminate-bg) );
+        background-size: $progressbar-height $progressbar-height;
+        animation: progressbar-indeterminate-animation $progressbar-animation-timing;
+    }
+
+}

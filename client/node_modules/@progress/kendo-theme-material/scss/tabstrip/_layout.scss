@@ -1,0 +1,26 @@
+@import "../../modules/@progress/kendo-theme-default/scss/tabstrip/_layout.scss";
+
+@include exports("tabstrip/layout/material") {
+
+    .k-tabstrip {
+        line-height: $tabstrip-line-height;
+    }
+
+    .k-tabstrip-items {
+        text-transform: uppercase;
+
+        .k-tabstrip-left & .k-link {
+            justify-content: flex-end;
+        }
+
+        > .k-item:not(.k-state-active) {
+            opacity: .7;
+        }
+
+        > .k-item:not(.k-state-disabled):hover,
+        > .k-item.k-state-hover {
+            opacity: 1;
+        }
+    }
+
+}

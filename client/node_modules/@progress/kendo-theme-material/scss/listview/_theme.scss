@@ -1,0 +1,15 @@
+@import "../../modules/@progress/kendo-theme-default/scss/listview/_theme.scss";
+
+@include exports( "listview/theme/material" ) {
+
+    // Listview
+    .k-listview {}
+
+
+    // Listview content
+    .k-listview-content {}
+    .k-listview-content > .k-state-selected.k-state-focused {
+        background-color: rgba( contrast-wcag( $listview-bg ), .12 );
+    }
+
+}

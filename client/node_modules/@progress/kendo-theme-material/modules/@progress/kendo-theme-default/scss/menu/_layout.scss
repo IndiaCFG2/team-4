@@ -1,0 +1,305 @@
+@include exports("menu/layout") {
+
+    // Base
+    .k-menu {
+        @include use-background-clip();
+        border-width: $menu-border-width;
+        border-style: solid;
+        box-sizing: border-box;
+        outline: 0;
+        font-family: $menu-font-family;
+        font-size: $menu-font-size;
+        line-height: $menu-line-height;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        position: relative;
+        cursor: default;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: $rgba-transparent;
+    }
+
+
+    // Menu item
+    .k-menu-item {
+        border-width: 0;
+        outline: 0;
+        display: flex;
+        flex: 0 0 auto;
+        position: relative;
+        user-select: none;
+    }
+
+
+    // Menu link
+    .k-menu-link {
+        padding: $menu-item-padding-y $menu-item-padding-x;
+        outline: 0;
+        color: inherit;
+        display: flex;
+        flex-direction: row;
+        flex: 1 1 auto;
+        align-items: center;
+        position: relative;
+        white-space: nowrap;
+        cursor: pointer;
+
+        > .k-icon:not(.k-menu-expand-arrow),
+        > .k-image,
+        > .k-sprite {
+            margin-right: $menu-item-icon-spacing;
+        }
+    }
+
+
+    // Expand arrow
+    .k-menu-expand-arrow {
+        margin-left: $icon-spacing;
+        margin-right: -$icon-spacing;
+        position: relative;
+    }
+    .k-menu-expand-arrow.k-i-arrow-60-left,
+    .k-menu-expand-arrow.k-i-arrow-60-right {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .k-menu-expand-arrow.k-i-arrow-60-right {
+        right: $icon-spacing;
+    }
+    .k-menu-expand-arrow.k-i-arrow-60-left {
+        left: $icon-spacing;
+    }
+
+
+    // Orientation -- horizontal
+    .k-menu-horizontal {
+        flex-direction: row;
+
+        > .k-menu-item  + .k-menu-item {
+            margin-left: $menu-item-spacing;
+        }
+
+        > .k-separator {
+            margin: 0 $menu-separator-spacing;
+            width: 0;
+            height: auto;
+            border-width: 0 0 0 1px;
+            border-style: solid;
+            flex-shrink: 0;
+        }
+    }
+
+
+    // Orientation -- vertical
+    .k-menu-vertical {
+        flex-direction: column;
+
+        > .k-menu-item + .k-menu-item {
+            margin-top: $menu-item-spacing;
+        }
+
+        > .k-menu-item > .k-menu-link {
+            padding: $menu-popup-item-padding-y $menu-popup-item-padding-x;
+            padding-right: $menu-popup-item-padding-end;
+        }
+
+        > .k-separator {
+            margin: $menu-separator-spacing 0;
+            height: 0;
+            border-width: 1px 0 0;
+            border-style: solid;
+            border-color: $panel-border;
+            display: block;
+        }
+    }
+
+
+    // Menu popup
+    .k-menu-popup {
+        border-width: $menu-popup-border-width;
+        border-style: solid;
+        overflow: auto;
+        max-height: 80vh;
+    }
+
+
+    // Sub menu
+    .k-menu-group {
+        margin: 0;
+        padding: $menu-popup-padding-y $menu-popup-padding-x;
+        font-size: $menu-popup-font-size;
+        line-height: $menu-popup-line-height;
+        list-style: none;
+        display: none;
+        position: absolute;
+
+        .k-menu-popup & {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        // jquery popup overrides those
+        .k-menu-item {
+            font-size: $menu-popup-font-size;
+            line-height: $menu-popup-line-height;
+        }
+
+        .k-menu-item + .k-menu-item {
+            margin-top: $menu-popup-item-spacing;
+        }
+
+        .k-menu-link {
+            padding: $menu-popup-item-padding-y $menu-popup-item-padding-x;
+            padding-right: $menu-popup-item-padding-end;
+        }
+
+        .k-separator {
+            margin: $menu-separator-spacing 0;
+            height: 0;
+            border-width: 1px 0 0;
+            border-style: solid;
+            border-color: $panel-border;
+            display: block;
+        }
+    }
+
+
+    // Context menu
+    .k-popups-wrapper {
+        position: relative;
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+    .k-context-menu {
+        margin: 0;
+        padding: $menu-popup-padding-y $menu-popup-padding-x;
+        border-width: $menu-popup-border-width;
+        border-style: solid;
+
+        &.k-menu-horizontal {
+            padding: $menu-popup-padding-x $menu-popup-padding-y;
+        }
+    }
+    .k-animation-container .k-context-menu.k-menu-horizontal {
+        // kendo-jquery adds `display: block` via js and we need to override it.
+        display: flex !important; // sass-lint:disable-line no-important
+        flex-wrap: nowrap;
+    }
+    .k-context-menu-popup {
+        z-index: 12000;
+
+        > .k-popup:not(.k-menu-popup),
+        .k-context-menu {
+            border: 0;
+        }
+    }
+
+
+    // Scrolling
+    .k-menu-scroll-wrapper {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        position: relative;
+
+        .k-menu {
+            overflow: hidden;
+            flex-wrap: nowrap;
+        }
+    }
+    .k-menu-scroll-button {
+        @include border-radius( 0 );
+        padding: 0;
+        border-width: 0;
+        border-color: inherit;
+        color: inherit;
+        background: inherit;
+        position: absolute;
+
+        &.k-scroll-left {
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 16px;
+            border-right-width: 1px;
+        }
+        &.k-scroll-right {
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 16px;
+            border-left-width: 1px;
+        }
+        &.k-scroll-up {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 16px;
+            border-bottom-width: 1px;
+        }
+        &.k-scroll-down {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 16px;
+            border-top-width: 1px;
+        }
+    }
+
+
+    // RTL
+    .k-rtl,
+    [dir="rtl"] {
+
+        .k-menu-link {
+            > .k-icon:not(.k-menu-expand-arrow),
+            > .k-image,
+            > .k-sprite {
+                margin-left: $menu-item-icon-spacing;
+                margin-right: 0;
+            }
+        }
+
+        .k-menu-expand-arrow.k-i-arrow-60-down {
+            margin-left: -$icon-spacing;
+            margin-right: $icon-spacing;
+        }
+
+
+        // Orientation -- horizontal
+        .k-menu-horizontal {
+
+            > .k-menu-item  + .k-menu-item {
+                margin-right: $menu-item-spacing;
+                margin-left: 0;
+            }
+        }
+
+
+        // Orientation -- vertical
+        .k-menu-vertical {
+
+            > .k-menu-item > .k-menu-link {
+                padding-right: $menu-popup-item-padding-x;
+                padding-left: $menu-popup-item-padding-end;
+            }
+        }
+
+
+        // Sub menu
+        .k-menu-group {
+
+            .k-menu-link {
+                padding-right: $menu-popup-item-padding-x;
+                padding-left: $menu-popup-item-padding-end;
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,21 @@
+@include exports("filter/theme") {
+
+    .k-filter {
+        color: $component-text;
+
+        .k-filter-preview-field {
+            color: $filter-preview-field-text;
+        }
+
+        .k-filter-preview-operator {
+            color: $filter-preview-operator-text;
+        }
+
+        .k-filter-item::before,
+        .k-filter-toolbar::before,
+        .k-filter-lines .k-filter-item:last-child > .k-filter-toolbar::after {
+            background-color: $border-color;
+        }
+    }
+
+}

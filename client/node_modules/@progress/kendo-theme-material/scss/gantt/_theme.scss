@@ -1,0 +1,23 @@
+@import "../../modules/@progress/kendo-theme-default/scss/gantt/_theme.scss";
+
+@include exports("gantt/theme/material") {
+
+
+    //Timeline
+    .k-gantt-timeline {
+
+        tbody > tr:not(:only-child) > .k-header {
+            border-left-color: $grid-border;
+        }
+        .k-rtl & {
+
+            .k-grid-header {
+
+                tbody > tr:not(:only-child) > .k-header {
+                    border-right-color: $grid-border;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,108 @@
+@include exports( "filemanager/theme") {
+
+    // Filemanager
+    .k-filemanager {
+        @include fill(
+            $filemanager-text,
+            $filemanager-bg,
+            $filemanager-border
+        );
+    }
+
+
+    // Filemanager toolbar
+    .k-filemanager-toolbar {
+        @include fill(
+            $filemanager-toolbar-text,
+            $filemanager-toolbar-bg,
+            $filemanager-toolbar-border
+        );
+    }
+
+
+    // Filemanager navigation
+    .k-filemanager-navigation {
+        @include fill(
+            $filemanager-navigation-text,
+            $filemanager-navigation-bg,
+            $filemanager-navigation-border
+        );
+    }
+
+
+    // Filemanager breadcrumb
+    .k-filemanager-breadcrumb {
+        @include fill(
+            $filemanager-breadcrumb-text,
+            $filemanager-breadcrumb-bg,
+            $filemanager-breadcrumb-border
+        );
+    }
+
+
+    // Filemanager listview
+    .k-filemanager-listview {
+        @include fill(
+            $filemanager-listview-text,
+            $filemanager-listview-bg,
+            $filemanager-listview-border
+        );
+
+        .k-listview-item {
+            @include fill(
+                $filemanager-listview-item-text,
+                $filemanager-listview-item-bg,
+                $filemanager-listview-item-border
+            );
+
+            .k-file-icon {
+                @include fill(
+                    $filemanager-listview-item-icon-text,
+                    $filemanager-listview-item-icon-bg,
+                    $filemanager-listview-item-icon-border
+                );
+            }
+
+            &.k-state-selected .k-file-icon {
+                @include fill(
+                    inherit,
+                    none,
+                    transparent
+                );
+            }
+        }
+
+    }
+
+
+    // Filemanager grid
+    .k-filemanager-grid {
+
+        @include fill(
+            $filemanager-grid-text,
+            $filemanager-grid-bg,
+            $filemanager-grid-border
+        );
+
+    }
+
+
+    // Filemanager preview
+    .k-filemanager-preview {
+        @include fill(
+            $filemanager-preview-text,
+            $filemanager-preview-bg,
+            $filemanager-preview-border
+        );
+
+        .k-file-icon {
+            @include fill(
+                $filemanager-preview-icon-text,
+                $filemanager-preview-icon-bg,
+                $filemanager-preview-icon-border
+            );
+        }
+
+    }
+
+}

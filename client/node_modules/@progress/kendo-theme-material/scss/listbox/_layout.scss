@@ -1,0 +1,18 @@
+@import "../../modules/@progress/kendo-theme-default/scss/listbox/_layout.scss";
+
+@include exports( "listbox/layout/material" ) {
+
+    .k-listbox {
+        .k-item {
+            padding: $listbox-item-padding-y $listbox-item-padding-x;
+        }
+    }
+
+    .k-item.k-drag-clue {
+        // sass-lint:disable no-important
+        width: auto !important;
+        // sass-lint:enable no-important
+        opacity: $drag-clue-opacity;
+        @include border-radius( $drag-clue-border-radius );
+    }
+}

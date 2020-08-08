@@ -1,0 +1,20 @@
+@include exports("listbox/theme") {
+
+    .k-listbox {
+        .k-list-scroller {
+            @include fill(
+                $listbox-text,
+                $listbox-bg,
+                $listbox-border
+            );
+        }
+        .k-drop-hint {
+            border-top-color: $primary;
+        }
+    }
+
+    li.k-item.k-drag-clue {
+        background-color: $listbox-drag-clue-bg;
+        color: $listbox-drag-clue-text;
+    }
+}

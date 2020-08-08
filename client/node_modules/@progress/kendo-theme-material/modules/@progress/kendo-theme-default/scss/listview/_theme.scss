@@ -1,0 +1,35 @@
+@include exports( "listview/theme" ) {
+
+    // Listview
+    .k-listview {
+        @include fill(
+            $listview-text,
+            $listview-bg,
+            $listview-border
+        );
+    }
+
+
+    // Listview content
+    .k-listview-content {
+
+        > .k-state-focused {
+            @include fill(
+                $listview-item-focus-text,
+                $listview-item-focus-bg,
+                $listview-item-focus-border
+            );
+            @include box-shadow( $listview-item-focus-shadow );
+        }
+
+        > .k-state-selected {
+            @include fill(
+                $listview-item-selected-text,
+                $listview-item-selected-bg,
+                $listview-item-selected-border
+            );
+        }
+
+    }
+
+}

@@ -1,0 +1,29 @@
+@include exports("map/theme") {
+
+    .k-map {
+        @include fill(
+            $map-text,
+            $map-bg,
+            $map-border
+        );
+
+        .k-navigator {
+            @include fill(
+                $button-text,
+                $button-bg,
+                $button-border,
+                $button-gradient
+            );
+            @include box-shadow( $button-shadow );
+        }
+
+        .k-marker {
+            color: $map-marker-fill;
+        }
+
+        .k-attribution {
+            background-color: $map-attribution-bg;
+        }
+    }
+
+}

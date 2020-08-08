@@ -1,0 +1,127 @@
+@include exports("map/layout") {
+
+    // Layout
+    .k-map {
+        height: 600px;
+        border-width: $map-border-width;
+        border-style: solid;
+        font-size: $map-font-size;
+        line-height: $map-line-height;
+        font-family: $map-font-family;
+
+
+        // Scroll
+        .km-scroll-wrapper {
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            position: absolute;
+        }
+        .km-scroll-container { height: 100%; }
+        .k-touch-scrollbar { display: none; }
+
+        // Layers
+        .k-layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        // Marker
+        .k-marker {
+            transform: translate(-50%, -100%);
+            font-size: $map-marker-size;
+            cursor: pointer;
+            position: absolute;
+            overflow: visible;
+        }
+
+
+        // Attribution
+        .k-attribution {
+            padding: $map-attribution-padding-y $map-attribution-padding-x;
+            border-width: 0;
+            font-size: $map-attribution-font-size;
+            z-index: 1000;
+        }
+
+
+    }
+
+
+    // Controls
+    .k-map-controls {
+        position: absolute;
+        display: flex;
+        align-items: center;
+    }
+
+
+    // Navigator
+    .k-navigator {
+        margin: $map-navigator-margin;
+        width: $map-navigator-width;
+        height: $map-navigator-width;
+        border-width: $map-navigator-border-width;
+        border-style: solid;
+        box-sizing: border-box;
+        border-radius: 50%;
+        position: relative;
+
+        .k-pdf-export & { display: none; }
+
+
+        // Buttons
+        .k-button {
+            margin: 0;
+            padding: 0;
+            border-radius: 100%;
+            line-height: 1;
+            box-shadow: none;
+            position: absolute;
+
+            &:not(:hover) {
+                border-color: transparent;
+                background: none;
+            }
+        }
+        .k-navigator-up {
+            transform: translateX(-50%);
+            top: $map-navigator-padding;
+            left: 50%;
+        }
+        .k-navigator-right {
+            transform: translateY(-50%);
+            right: $map-navigator-padding;
+            top: 50%;
+        }
+        .k-navigator-down  {
+            transform: translateX(-50%);
+            bottom: $map-navigator-padding;
+            left: 50%;
+        }
+        .k-navigator-left {
+            transform: translateY(-50%);
+            left: $map-navigator-padding;
+            top: 50%;
+        }
+    }
+
+
+    // Zoom control
+    .k-zoom-control {
+        margin: $spacer-x;
+        border: 0;
+        background: none;
+        display: flex;
+
+        .k-pdf-export & { display: none; }
+
+
+        // Buttons
+        .k-button {
+            padding: $button-padding-y;
+        }
+    }
+
+}

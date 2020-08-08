@@ -1,0 +1,102 @@
+@include exports("notification/layout") {
+
+    // Base
+    .k-notification-group {
+        position: fixed;
+        display: inline-flex;
+        flex-wrap: wrap;
+        max-height: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .k-notification-container {
+        margin: ($notification-padding-y / 2) 0;
+        display: inline-flex;
+        vertical-align: top;
+
+        &-animating {
+            overflow: hidden;
+        }
+    }
+
+    .k-notification {
+        @include border-radius( $notification-border-radius );
+        padding: $notification-padding-y $notification-padding-x;
+        border-width: $notification-border-width;
+        border-style: solid;
+        box-sizing: border-box;
+        outline: 0;
+        font-family: $notification-font-family;
+        font-size: $notification-font-size;
+        line-height: $notification-line-height;
+        cursor: default;
+        position: relative;
+        display: block;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: $rgba-transparent;
+    }
+
+    .k-notification-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        > .k-icon {
+            margin-top: $notification-icon-offset;
+            margin-right: $notification-icon-spacing;
+            flex: 0 0 auto;
+        }
+
+        > .k-i-close {
+            margin-right: 0;
+            margin-left: $notification-icon-spacing;
+            flex: 0 0 auto;
+            cursor: pointer;
+        }
+
+        > .k-notification-content {
+            flex: 1 1 auto;
+        }
+    }
+
+    // RTL
+    .k-rtl .k-notification,
+    [dir="rtl"] .k-notification {
+
+        .k-notification-wrap {
+
+            > .k-icon {
+                margin-right: 0;
+                margin-left: $notification-icon-spacing;
+            }
+
+            > .k-i-close {
+                margin-left: 0;
+                margin-right: $notification-icon-spacing;
+            }
+        }
+    }
+
+}
+
+
+
+
+@include exports("notification/layout/ie9") {
+
+
+    .k-ie9 .k-notification-wrap {
+        white-space: nowrap;
+
+        > .k-icon {
+            vertical-align: top;
+        }
+
+        > .k-notification-content {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: normal;
+        }
+    }
+
+}

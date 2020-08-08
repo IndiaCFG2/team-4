@@ -1,0 +1,44 @@
+@include exports("treeview/theme") {
+
+    // Appearance
+    .k-treeview {
+        @include fill(
+            $treeview-text,
+            $treeview-bg,
+            $treeview-border
+        );
+
+
+        // Item
+        .k-in {}
+
+
+        // Interactive states
+        .k-in:hover,
+        .k-in.k-state-hover {
+            @include fill(
+                $treeview-item-hovered-text,
+                $treeview-item-hovered-bg,
+                $treeview-item-hovered-border,
+                $treeview-item-hovered-gradient
+            );
+        }
+        .k-in.k-state-selected {
+            @include fill(
+                $treeview-item-selected-text,
+                $treeview-item-selected-bg,
+                $treeview-item-selected-border,
+                $treeview-item-selected-gradient
+            );
+        }
+        .k-in.k-state-focused {
+            @include fill(
+                $treeview-item-hovered-text,
+                $treeview-item-hovered-bg,
+                $treeview-item-hovered-border,
+                $treeview-item-hovered-gradient
+            );
+        }
+    }
+
+}

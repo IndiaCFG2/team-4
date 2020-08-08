@@ -1,0 +1,60 @@
+@import "../../modules/@progress/kendo-theme-default/scss/menu/_theme.scss";
+
+@include exports("menu/theme/material") {
+
+    .k-menu:not(.k-context-menu) {
+
+        // Root items
+        > .k-menu-item {
+
+            // Focused state
+            &:focus,
+            &.k-state-focused {
+                @include fill(
+                    $menu-item-hover-text,
+                    $menu-item-hover-bg,
+                    $menu-item-hover-border,
+                    $menu-item-hover-gradient
+                );
+            }
+
+        }
+    }
+
+    // Subitems
+    .k-menu-group,
+    .k-context-menu {
+        .k-menu-item {
+
+            // Focused
+            &:focus,
+            &.k-state-focused {
+                @include fill(
+                    $menu-popup-item-hover-text,
+                    $menu-popup-item-hover-bg,
+                    $menu-popup-item-hover-border,
+                    $menu-popup-item-hover-gradient
+                )
+            }
+        }
+    }
+
+
+    // Scrolling
+    .k-menu-scroll-wrapper {
+        .k-menu-scroll-button {
+            .k-i-arrow-60-up::before {
+                content: "\e013";
+            }
+            .k-i-arrow-60-right::before {
+                content: "\e014";
+            }
+            .k-i-arrow-60-down::before {
+                content: "\e015";
+            }
+            .k-i-arrow-60-left::before {
+                content: "\e016";
+            }
+        }
+    }
+}

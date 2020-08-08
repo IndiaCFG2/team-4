@@ -1,0 +1,17 @@
+var current = {
+    compile: function(template) {
+        return template;
+    }
+};
+
+var TemplateService = function TemplateService () {};
+
+TemplateService.register = function register (userImplementation) {
+    current = userImplementation;
+};
+
+TemplateService.compile = function compile (template) {
+    return current.compile(template);
+};
+
+export default TemplateService;

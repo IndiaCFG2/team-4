@@ -1,0 +1,258 @@
+@include exports("pager/layout") {
+
+    .k-pager-wrap {
+        padding: $pager-padding-y $pager-padding-x;
+        border-width: $pager-border-width;
+        border-style: solid;
+        box-sizing: border-box;
+        outline: 0;
+        font-family: $pager-font-family;
+        font-size: $pager-font-size;
+        line-height: $pager-line-height;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+        flex: 0 0 auto;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: $rgba-transparent;
+
+        .k-link {
+            text-decoration: none;
+            outline: 0;
+            font: inherit;
+            background-color: inherit;
+
+            // Focused state
+            &:focus,
+            &.k-state-focus {
+                z-index: 2;
+            }
+        }
+
+        .k-widget,
+        select.k-dropdown {
+            font-size: inherit;
+        }
+
+        .k-rtl &,
+        &[dir="rtl"],
+        [dir="rtl"] & {
+            .k-i-arrow-end-left,
+            .k-i-arrow-60-left,
+            .k-i-arrow-60-right,
+            .k-i-arrow-end-right,
+            .k-i-seek-w,
+            .k-i-arrow-w,
+            .k-i-arrow-e,
+            .k-i-seek-e {
+                transform: scaleX(-1);
+            }
+        }
+
+    }
+
+
+    // Base pager section
+    %base-pager-section {
+        @if ($pager-section-spacing) {
+            margin-left: $pager-section-spacing;
+            margin-right: $pager-section-spacing;
+        }
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+
+    // Base pager item
+    %base-pager-item {
+        min-width: $button-calc-size;
+        height: $button-calc-size;
+        box-sizing: border-box;
+        color: inherit;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &:hover {
+            z-index: 2;
+        }
+        &.k-state-disabled {
+            color: inherit;
+        }
+    }
+
+
+    // Pager items
+    .k-pager-nav {
+        @extend %base-pager-item;
+        @include border-radius( $pager-item-border-radius );
+        padding: $pager-item-padding-y $pager-item-padding-x;
+        border-width: $pager-item-border-width;
+        border-style: solid;
+    }
+
+
+    // Pager numbers
+    .k-pager-numbers-wrap {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+
+        select.k-dropdown {
+            cursor: pointer;
+            display: none;
+        }
+    }
+    .k-pager-numbers {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+
+        li {
+            display: inline-flex;
+        }
+
+
+        // Links
+        .k-link {
+            @extend %base-pager-item;
+            @include border-radius( $pager-number-border-radius );
+            padding: $pager-number-padding-y $pager-number-padding-x;
+            border-width: $pager-number-border-width;
+            border-style: solid;
+        }
+
+        // Selected state
+        .k-state-selected {
+            cursor: inherit;
+            z-index: 2;
+        }
+    }
+
+
+    // Spacing between items
+    .k-pager-nav + .k-pager-nav,
+    .k-pager-nav + .k-pager-numbers-wrap,
+    .k-pager-numbers-wrap + .k-pager-nav,
+    .k-pager-numbers > li + li {
+        @if ($pager-item-spacing) {
+            margin-left: $pager-item-spacing;
+        }
+
+        .k-rtl &,
+        [dir="rtl"] & {
+            @if ($pager-item-spacing) {
+                margin-left: 0;
+                margin-right: $pager-item-spacing;
+            }
+        }
+    }
+
+
+    // Pager input
+    .k-pager-input {
+        @extend %base-pager-section;
+
+        .k-textbox {
+            margin: 0 1ex;
+            width: $pager-input-width;
+        }
+    }
+
+
+    // Pager sizes
+    .k-pager-sizes {
+        @extend %base-pager-section;
+
+        .k-dropdown,
+        > select {
+            margin-right: 1ex;
+            width: $pager-dropdown-width;
+        }
+
+        .k-rtl &,
+        [dir="rtl"] & {
+            .k-dropdown,
+            > select {
+                margin-left: 1ex;
+                margin-right: 0;
+            }
+        }
+    }
+
+
+    // Pager info
+    .k-pager-info {
+        @extend %base-pager-section;
+        text-align: right;
+        justify-content: flex-end;
+        flex: 1 1 0%;
+        order: 9;
+    }
+
+
+    // Pager refresh
+    .k-pager-refresh {
+        @extend %base-pager-item;
+        margin-left: auto;
+        order: 10;
+
+        .k-rtl &,
+        [dir="rtl"] & {
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+
+    // Responsive
+    .k-pager-sm {
+        overflow: visible;
+
+        // Show native select
+        .k-pager-numbers-wrap {
+            select.k-dropdown {
+                width: $pager-dropdown-width;
+                display: flex;
+            }
+        }
+
+        .k-pager-numbers-wrap {
+            @if ($pager-section-spacing) {
+                margin-left: $pager-section-spacing;
+                margin-right: $pager-section-spacing;
+            }
+
+            height: $button-calc-size;
+            box-sizing: border-box;
+            border-color: inherit;
+        }
+
+        .k-rtl &,
+        &[dir="rtl"],
+        [dir="rtl"] & {
+            .k-pager-numbers-wrap {
+                @if ($pager-section-spacing) {
+                    margin-left: $pager-section-spacing;
+                    margin-right: $pager-section-spacing;
+                }
+            }
+        }
+
+    }
+
+    // Hide components
+    .k-pager-md .k-pager-info,
+    .k-pager-sm .k-pager-info,
+    .k-pager-sm .k-pager-sizes,
+    .k-pager-sm .k-pager-numbers {
+        display: none;
+    }
+
+}

@@ -1,0 +1,185 @@
+@include exports("colorpicker/theme") {
+
+    .k-colorpicker {
+
+        // Normal state
+        .k-picker-wrap {
+            @include fill(
+                $colorpicker-select-text,
+                $colorpicker-select-bg,
+                $colorpicker-select-border,
+                $colorpicker-select-gradient
+            );
+
+            &:focus {
+
+            }
+
+            // Invalid state
+            &.k-invalid,
+            &.k-invalid:hover,
+            &.k-state-invalid {
+                color: $error;
+                border-color: $invalid-border;
+            }
+        }
+
+        // Hovered state
+        .k-tool-icon:hover,
+        .k-select:hover,
+        .k-tool-icon.k-state-hover,
+        .k-select.k-state-hover,
+        .k-state-hover {
+            @include fill(
+                $colorpicker-select-hovered-text,
+                $colorpicker-select-hovered-bg,
+                $colorpicker-select-hovered-border,
+                $colorpicker-select-hovered-gradient
+            );
+        }
+
+        .k-tool-icon:hover,
+        .k-tool-icon.k-state-hover {
+            border-color: $colorpicker-tool-icon-hovered-border;
+        }
+
+        // Selected state
+        .k-state-active {
+            @include fill(
+                $colorpicker-select-focused-text,
+                $colorpicker-select-focused-bg,
+                $colorpicker-select-focused-border,
+                $colorpicker-select-focused-gradient
+            );
+            @include box-shadow( $colorpicker-select-pressed-shadow );
+        }
+
+        // Focused state
+        .k-state-focused {
+            box-shadow: $colorpicker-select-focused-shadow;
+        }
+
+        // Invalid state
+        &.k-state-invalid,
+        &.ng-invalid.ng-touched,
+        &.ng-invalid.ng-dirty {
+            .k-picker-wrap {
+                border-color: $invalid-border;
+            }
+        }
+
+    }
+
+}
+
+
+
+
+@include exports( "flatcolorpicker/theme" ) {
+
+    .k-flatcolorpicker {
+        @extend .k-text-selection !optional;
+        @include fill(
+            $panel-text,
+            $panel-bg,
+            $panel-border
+        );
+
+        .k-color-value {
+            @include fill(
+                $colorpicker-text,
+                $colorpicker-bg,
+                $colorpicker-border
+            );
+        }
+
+        .k-hsv-gradient {
+            background: linear-gradient( to bottom, $gradient-transparent-to-black ), linear-gradient( to right, $gradient-white-to-transparent );
+        }
+
+
+        // Sliders
+        .k-slider {
+
+            // Draghandle
+            .k-draghandle {
+                box-shadow: 0 1px 4px rgba(0, 0, 0, .9);
+                // sass-lint:enable no-color-literals no-color-keywords
+                background-color: transparent;
+            }
+            .k-draghandle:hover,
+            .k-draghandle:focus {
+                // sass-lint:disable no-color-literals no-color-keywords
+                border-color: white;
+                box-shadow: 0 1px 4px black;
+                // sass-lint:enable no-color-literals no-color-keywords
+                background-color: transparent;
+            }
+
+        }
+
+
+        // Slider type
+        .k-hue-slider {
+            &.k-slider-horizontal {
+                .k-slider-track {
+                    background: linear-gradient( to right, $gradient-rainbow );
+                }
+            }
+            &.k-slider-vertical {
+                .k-slider-track {
+                    background: linear-gradient( to top, $gradient-rainbow );
+                }
+            }
+        }
+        .k-alpha-slider {
+            .k-slider-track {
+                background: url(map-get($data-uris, "alpha-slider-bgr.png")) center;
+            }
+        }
+
+
+        .k-draghandle {
+            border-color: rgba(255, 255, 255, .8);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .21);
+        }
+
+    }
+
+
+    .k-rtl,
+    [dir="rtl"] {
+        .k-flatcolorpicker {
+
+            .k-hue-slider.k-slider-horizontal .k-slider-track {
+                background: linear-gradient( to left, $gradient-rainbow );
+            }
+
+            .k-alpha-slider .k-slider-track {
+                background: url(map-get($data-uris, "alpha-slider-bgr-reversed.png")) center;
+            }
+
+        }
+    }
+
+}
+
+
+
+
+@include exports( "colorpalette/theme" ) {
+
+    .k-colorpalette {
+        .k-item:hover,
+        .k-item.k-state-hover {
+            box-shadow: $colorpalette-hovered-shadow;
+        }
+        .k-item.k-state-selected,
+        .k-item.k-state-selected:hover,
+        .k-item.k-state-focused,
+        .k-item:focus {
+            box-shadow: $colorpalette-focused-shadow;
+        }
+    }
+
+}

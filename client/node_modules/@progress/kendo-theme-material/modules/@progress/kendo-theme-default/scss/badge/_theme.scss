@@ -1,0 +1,23 @@
+@include exports( "badge/theme" ) {
+
+    // Solid badges
+    @each $name, $color in $theme-colors {
+        .k-badge-solid.k-badge-#{$name} {
+            border-color: $color;
+            color: contrast-wcag( $color );
+            background-color: $color;
+        }
+    }
+
+    // Outline badges
+    .k-badge-outline {
+        border-color: currentColor;
+        background-color: $component-bg;
+    }
+
+    @each $name, $color in $theme-colors {
+        .k-badge-outline.k-badge-#{$name} {
+            color: $color;
+        }
+    }
+}

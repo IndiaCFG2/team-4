@@ -1,0 +1,56 @@
+@include exports("scrollview/theme") {
+
+    // refactor when https://github.com/telerik/kendo-angular-scrollview/issues/130 is done
+    kendo-scrollview.k-scrollview-wrap,
+    div.k-scrollview {
+        @extend .k-text-selection !optional;
+        @include fill(
+            $scrollview-text,
+            $scrollview-bg,
+            $scrollview-border
+        );
+
+        // refactor when https://github.com/telerik/kendo-angular-scrollview/issues/130 is done
+        .k-scrollview-pageable > li.k-button,
+        .k-scrollview-nav > li.k-link {
+            @include fill(
+                $bg: $scrollview-pagebutton-bg,
+                $border: $scrollview-pagebutton-border
+            );
+
+            box-shadow: $scrollview-pagebutton-shadow;
+            background-clip: padding-box;
+
+            &.k-primary {
+                @include fill(
+                    $bg: $scrollview-pagebutton-primary-bg,
+                    $border: $scrollview-pagebutton-primary-border
+                );
+            }
+        }
+
+        .k-scrollview-elements {
+            color: $scrollview-navigation-color;
+        }
+
+        .k-scrollview-next,
+        .k-scrollview-prev {
+            color: inherit;
+            background: $scrollview-navigation-bg;
+            text-shadow: $scrollview-navigation-icon-shadow;
+            opacity: $scrollview-navigation-default-opacity;
+            outline-width: 0;
+
+            &:hover {
+                color: $scrollview-navigation-color;
+                opacity: $scrollview-navigation-hover-opacity;
+
+                span::before {
+                    background-color: $scrollview-navigation-hover-span-bg;
+                }
+            }
+        }
+
+    }
+
+}

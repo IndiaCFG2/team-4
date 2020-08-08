@@ -1,0 +1,35 @@
+@import "../../modules/@progress/kendo-theme-default/scss/scheduler/_theme.scss";
+
+@include exports("scheduler/theme/material") {
+
+    // Events
+    .k-event {
+
+        .k-event-actions {
+            .k-link {
+                color: $scheduler-event-bg;
+                background-color: $scheduler-event-text;
+            }
+        }
+
+        .k-resize-handle::before {
+            // TODO: $scheduler-content-area-bg
+            background-color: $primary-contrast;
+        }
+    }
+
+}
+
+
+
+
+@include exports("scheduler-edit-form/theme/material") {
+
+    .k-scheduler-edit-form {
+        .k-edit-label {
+            color: $floating-label-text;
+        }
+    }
+
+}
+
