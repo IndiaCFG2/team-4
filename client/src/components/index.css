@@ -1,0 +1,21 @@
+body {
+    padding-top: 100px;
+    font: 1.6rem Helvetica;
+    height: 100%;
+    margin: 0;
+    background: rgba(0, 128, 0, 0.1);
+
+  }
+  .navigation {
+    position: relative;
+  }
+  
+  .main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  
+  }
