@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+body {
+    padding-top: 100px;
+    font: 1.6rem Helvetica;
+    height: 100%;
+    margin: 0;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+.navigation {
+    position: relative;
+}  
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container{
+  font-family: 'Architects Daughter', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.h2-policy{
+  font-family: "Times New Roman", Times, serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.content-container[_ngcontent-lvo-c116]   
+.para[_ngcontent-lvo-c116], 
+.content-container[_ngcontent-lvo-c116]   h1[_ngcontent-lvo-c116],
+.content-container[_ngcontent-lvo-c116]   h2[_ngcontent-lvo-c116], 
+.content-container[_ngcontent-lvo-c116]   h3[_ngcontent-lvo-c116], 
+.ff-lato[_ngcontent-lvo-c116]{
+font-family: "Lucida Console", Courier, monospace;
 }
-
-.App-link {
-  color: #61dafb;
+.container {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: brightness(100%);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.response-block[_ngcontent-lvo-c117]   
+.answers[_ngcontent-lvo-c117]   
+.answer[_ngcontent-lvo-c117]{
+margin:0 24px;
+padding:24px 0;
+border-bottom:1px solid rgba(213,219,226,.5)
+}
+.response-block[_ngcontent-lvo-c117]   
+.answers[_ngcontent-lvo-c117]   
+.answer[_ngcontent-lvo-c117]   
+.question-text[_ngcontent-lvo-c117]{
+font-size:14px;color:#878787
+}
+.response-block[_ngcontent-lvo-c117]   
+.answers[_ngcontent-lvo-c117]   
+.answer[_ngcontent-lvo-c117]   
+.question-text__number[_ngcontent-lvo-c117]{
+width:15px;
+margin-right:5px
+}
+.response-block[_ngcontent-lvo-c117]   
+.answers[_ngcontent-lvo-c117]   
+.answer[_ngcontent-lvo-c117]   
+.answer-text[_ngcontent-lvo-c117]{
+font-size:14px;
+line-height:22px;
+letter-spacing:.06em;color:#151515;
+margin:16px 20px 0
+}
+.response-block[_ngcontent-lvo-c117]   
+.answers[_ngcontent-lvo-c117]   
+.answer[_ngcontent-lvo-c117]   
+.question-answer[_ngcontent-lvo-c117]{
+background:#f2f2f2;
+border-radius:4px;
+padding:4px
+}
+.response-block[_ngcontent-lvo-c117]   
+.answers[_ngcontent-lvo-c117]:last-child   
+.answer[_ngcontent-lvo-c117]{
+border-bottom:none
 }
