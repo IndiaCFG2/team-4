@@ -1,0 +1,35 @@
+{
+    "sentimentAnalyis": {
+        "agree": 70.2,
+        "disagree": 25.06,
+        "neutral": 4.74
+    },
+    "objQue": [
+        {
+            "Que": {
+                "description": "Question - 1",
+                "option1": {
+                    "optionDescription": "Option-1",
+                    "count": 24
+                },
+                "option2": {
+                    "optionDescription": "Option-2",
+                    "count": 64
+                },
+                "option3": {
+                    "optionDescription": "Option-3",
+                    "count": 32
+                }
+            }
+        }
+    ],
+    "summarization":[ 
+        "Sample Sentence - 1",
+        "Sample Sentence - 2",
+        "Sample Sentence - 3",
+        "Sample Sentence - 4",
+        "Sample Sentence - 5"
+        ]
+    
+}
+
