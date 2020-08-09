@@ -13,3 +13,11 @@ h1 {
   .container .row div {
     outline: solid 1px black;
   }
+.me{
+    border-radius: 25px;
+    background: #6a6b69;
+    padding: 30px;
+    width: 200px;
+    height: 100px;
+    color: aliceblue;
+  }

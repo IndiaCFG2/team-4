@@ -23,9 +23,8 @@ return (
     <div className="main">
      <Switch>
         <Route path="/" exact={true} component={PolicyList} />
-        <Route path="/policy"  component={Policy} />
-        <Route path="/dashboard"  component={Dashboard} />
-
+        <Route path="/policy" exact={true} component={Policy} />
+        <Route path="/dashboard" exact={true} component={Dashboard} />
        </Switch>
     </div>
 </BrowserRouter>);
