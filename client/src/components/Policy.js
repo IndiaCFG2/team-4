@@ -79,6 +79,7 @@ function Policy(){
                 </button>
             </div>
             </form>
+            <Link to='/dashboard' className="btn btn-success" >Check out the Report!!!</Link>
         </div>
     
     );
