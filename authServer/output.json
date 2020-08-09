@@ -1,0 +1,57 @@
+//For sentimental analysis
+{
+  "Agree" : "Number",
+  "Disagree" : "Number",
+  "Neutral" : "Number"
+}
+
+//For obj Questions
+{
+
+    [
+      {
+        "Q1" : {
+          "description" : "...",
+          "option1" : {
+            "optionDescription" : "...",
+            "count" : ''
+          },
+          "option2" : {
+            "optionDescription" : "...",
+            "count" : ''
+          },
+          "option3" : {
+            "optionDescription" : "...",
+            "count" : ''
+          }
+        },
+        Q1" : {
+        "description" : "...",
+        "option1" : {
+          "optionDescription" : "...",
+          "count" : ''
+        },
+        "option2" : {
+          "optionDescription" : "...",
+          "count" : ''
+        },
+        "option3" : {
+          "optionDescription" : "...",
+          "count" : ''
+        }
+      },
+      so on...
+      }
+    ]
+
+}
+
+//Merits and Demerits
+{
+  "Merits" : {
+        "message" : 'string',
+    },
+  "Demerits" : {
+      "message" : "string",
+  }
+}
