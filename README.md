@@ -41,5 +41,14 @@ data folder consists of the data required.
 
 test consists of files that are upgraded to NLTK VADER for sentiment.
 
+Models and Libraries Used:
+-----------
+
+1. Speech to text conversion : SpeechRecognition library which takes the audio in the .wav format and converts it to text or paragraph. This data is then again added to the data use for subjective analysis for people.
+
+2. Sentimental Analysis : We have used nltk library for NLP(Natural Language Processing) for finding out the sentiments of people through their feedback text or paragraph and determining the percentage of people agreeing and disagreeing with respect to policy.
+
+3. Text Summarization : We are using the dataset from Civis and using that we have the most liked comments and feedback and the most disliked comment. Using this data we would summarize a final summary for all the feedbacks in top liked or disliked.
+
 
 
