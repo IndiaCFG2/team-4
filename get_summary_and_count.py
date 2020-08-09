@@ -4,17 +4,28 @@ This module returns total positive sentiments, total negative sentiments and the
 import pandas as pd
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk import tokenize
+from googletrans import Translator
 
 
-DATASET = "feedback_dataset_EIP.csv"
-POS_OFFSET = 0.08
+DATASET = "feedback_dataset_EIP.xlsx"
+POS_OFFSET = 0.1
+ORIGIN = 0.04
 
 
 def get_feedback_df():
     '''
     convert feedback list to df and return 
     '''
-    return pd.read_csv(DATASET)
+    return pd.read_excel(DATASET)
+
+
+def translate_regional_languages(feedback_df):
+    '''
+    detects and translates any other language to english
+    '''
+    translator = Translator()
+    feedback_df['responseText'] = [translator.translate(x).text for x in feedback_df['responseText']]
+    return feedback_df
 
 
 def get_total_count(feedback_df):
@@ -22,7 +33,7 @@ def get_total_count(feedback_df):
     returns total pos and neg count 
     '''
     total_pos = feedback_df[feedback_df['compound']>POS_OFFSET].shape[0]
-    total_neg = feedback_df[feedback_df['compound']<0].shape[0]
+    total_neg = feedback_df[feedback_df['compound']<ORIGIN].shape[0]
     total_neu = feedback_df.shape[0] - total_pos - total_neg
     return total_pos, total_neg, total_neu
 
@@ -84,18 +95,22 @@ def main():
     '''
     main
     '''
+    # read df and translate to en
     feedback_df = get_feedback_df()
+    feedback_df = translate_regional_languages(feedback_df)
+
+    # get sentiment scores using VADER
     feedback_df = get_sentiment_scores(feedback_df)
     
+    # get total count of sentiments
     total_pos, total_neg, total_neu = get_total_count(feedback_df)
-    
+
+    # add votes metric and get summary
     feedback_df = add_votes_metric(feedback_df)
-    
     summary = get_summary(feedback_df)
     
+    # print output -> node will read from buffer 
     print(total_pos)
     print(total_neg)
     print(total_neu)
     print(summary)
-
-main()
