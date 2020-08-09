@@ -24,7 +24,7 @@ The Solution/Key Features:
 
 6. Pie and bar graphs for data visualization.
 
-The Git folder contains:
+This Git Repo contains:
 ----------
 Client folder consists the UI part :
     1. Landing Page
