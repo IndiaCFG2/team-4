@@ -22,6 +22,7 @@ return (
      <Switch>
         <Route path="/" exact={true} component={PolicyList} />
         <Route path="/policy" exact={true} component={Policy} />
+        <Route path="/dashboard" exact={true} component={Dashboard} />
        </Switch>
     </div>
 </BrowserRouter>);
