@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom'
 
 function Policy(){
     return (
@@ -55,17 +56,17 @@ function Policy(){
             <p className="question-text">
             <span className="question-text__number">2.</span> Are you concerned about the consultation? </p>
             <div className="radio">
-            <span className="r1"><input type="radio" name="r1"/>Yes</span>
-            <span className="r2"><input type="radio" name="r1"/>No</span>
-            <span className="r3"><input type="radio" name="r1"/>Maybe</span>
+            <span className="r1"><input type="radio" name="r1"/> Yes </span>
+            <span className="r2"><input type="radio" name="r1"/> No </span>
+            <span className="r3"><input type="radio" name="r1"/> Maybe </span>
             </div>
             
             <p className="question-text">
             <span className="question-text__number">3.</span> Is the consultation valid? </p>
             <div className="radio">
-            <span className="r1"><input type="radio" name="r1"/>Yes</span>
-            <span className="r2"><input type="radio" name="r1"/>No</span>
-            <span className="r3"><input type="radio" name="r1"/>Maybe</span>
+            <span className="r1"><input type="radio" name="r1"/> Yes </span>
+            <span className="r2"><input type="radio" name="r1"/> No </span>
+            <span className="r3"><input type="radio" name="r1"/> Maybe </span>
             </div>
             
             <div className="audio-upload">
@@ -74,9 +75,12 @@ function Policy(){
             <input type="file" id="audio-file" name="audio" accept="audio/*"/>
             </div>
             <div className="py-3">
-                <button className="btn-submit active">
-                <p className="m-0"> SUBMIT RESPONSE </p>
-                </button>
+                
+                <div>
+                <Link to='/dashboard' className="btn btn-primary" style={{margin:"5px"}} >View Dashboard</Link>
+                &nbsp;&nbsp;
+                <Link to='/' className="btn btn-primary" style={{marginRight:"20px"}}>Submit Response</Link>
+                </div>
             </div>
             </form>
         </div>

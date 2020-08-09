@@ -5,7 +5,7 @@ body {
     font: 1.6rem Helvetica;
     height: 100%;
     margin: 0;
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background: rgba(0, 128, 0, 0.1);
 }
 .navigation {
     position: relative;
@@ -20,13 +20,6 @@ body {
   
 }
 
-.container{
-  font-family: 'Architects Daughter', cursive;
-}
-
-.h2-policy{
-  font-family: "Times New Roman", Times, serif;
-}
 .content-container[_ngcontent-lvo-c116]   
 .para[_ngcontent-lvo-c116], 
 .content-container[_ngcontent-lvo-c116]   h1[_ngcontent-lvo-c116],
@@ -84,4 +77,9 @@ padding:4px
 .answers[_ngcontent-lvo-c117]:last-child   
 .answer[_ngcontent-lvo-c117]{
 border-bottom:none
+}
+.radio{
+padding:3px;
+margin-left: 3px;
+margin-right: 3px;
 }

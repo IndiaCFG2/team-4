@@ -10,6 +10,7 @@ import '@progress/kendo-theme-material/dist/all.css';
 import ReactDOM from 'react-dom';
 import { Component } from 'react';
 import DonutChart from './DonutChart';
+import Bar from './Bar';
 class Dashboard extends Component
 {
     constructor(props) {
@@ -25,13 +26,16 @@ class Dashboard extends Component
 render(){
     return (
     <Ripple>
-        <div className="app-container " ref={(el) => this.appContainer = el}>
-            <div className={""}>
+        <div className={"app-container "} ref={(el) => this.appContainer = el}>
+            <div>
             <Button primary={true} onClick={this.handlePDFExport}>Export to PDF</Button>        
-          </div>
-          <div className="row">
+            </div>
+          <div className={"row"}>
               <DonutChart />
           </div>    
+          <div className={"row"}>
+              <Bar />
+          </div>
         </div>
         </Ripple>
     );

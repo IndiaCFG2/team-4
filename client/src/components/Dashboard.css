@@ -2,7 +2,8 @@ h1 {
     color:rgb(63, 81, 181);
     font-weight: bold;
   }
-  .buttons-right>button {
+  
+  Button {
     float: right;
     margin: 5px;
   }
