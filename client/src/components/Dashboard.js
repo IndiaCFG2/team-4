@@ -44,15 +44,15 @@ render(){
               <div className='col-12'>
               <div>
                 <h5>Objective Question -1 Analysis</h5>
-                <Pie data={{labels:this.state.Donutdata1.labels,
-                datasets:this.state.Donutdata1.datasets}} height='50%' width='100px'>
+                <Pie data={{labels:this.state3.Donutdata1.labels,
+                datasets:this.state3.Donutdata1.datasets}} height='50%' width='100px'>
                 </Pie>
                 <br />
             </div>
              <div>
              <h5>Objective Question -1 Analysis</h5>
-             <Pie data={{labels:this.state2.Donutdata2.labels,
-             datasets:this.state2.Donutdata2.datasets}} height='50%' width='100px'>
+             <Pie data={{labels:this.state4.Donutdata2.labels,
+             datasets:this.state4.Donutdata2.datasets}} height='50%' width='100px'>
              </Pie>
              <br />
          </div>
@@ -69,7 +69,7 @@ render(){
         </div>  
         <div className='row'>
             <h5>Locations -1 Analysis</h5>
-                <Bar data={{labels:this.state.Bardata1.labels,
+                <Bar data={{labels:this.state1.Bardata1.labels,
                 datasets:this.state1.Bardata1.datasets}} height='50%' width='100px'>
                 </Bar>
                 <br />
